@@ -1,0 +1,35 @@
+
+create the project
+
+    ~/nRF5_SDK_15.3.0_59ac345/examples/ble_central
+    $ cp -a ble_app_uart_c dongle7_nus_c
+
+    $ cd dongle7_nus_c/
+
+    $ ls -F
+    ble_app_uart_c.eww*  debug.log*  hex/  main.c*  pca10040/  pca10056/
+
+    $ cp -a pca10056 pca10059
+
+    $ mv pca10056 pca10056-ref
+    $ mv pca10040 pca10040-ref
+
+  modify the project board files
+
+    $ cd pca10059/s140/ses
+    $ ls -l
+    -rwxrwxr-x+ 1 None None 14434 Feb 14  2019 ble_app_uart_c_pca10056_s140.emProject
+    -rwxrwxr-x+ 1 None None   368 Feb 14  2019 ble_app_uart_c_pca10056_s140.emSession
+    -rwxrwxr-x+ 1 None None  6221 Feb 14  2019 flash_placement.xml
+
+    $ cp -a ../../../../../ble_peripheral/dongle6_blinky/pca10059/s140/ses/flash_placement.xml .
+
+    $ mv ble_app_uart_c_pca10056_s140.emProject ble_app_uart_c_pca10059_s140.emProject
+    $ mv ble_app_uart_c_pca10056_s140.emSession ble_app_uart_c_pca10059_s140.emSession
+
+  in the vi, change all pca10056 into pca10059 and PCA10056 into PCA10059
+
+    $ vi ble_app_uart_c_pca10059_s140.emProject
+    $ vi ble_app_uart_c_pca10059_s140.emSession
+
+
