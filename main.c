@@ -73,6 +73,11 @@
 
 #define ECHOBACK_BLE_UART_DATA  1                                       /**< Echo the UART data that is received over the Nordic UART Service (NUS) back to the sender. */
 
+#define RX_PIN_NUMBER (15)
+#define TX_PIN_NUMBER (17)
+#define RTS_PIN_NUMBER (20)
+#define CTS_PIN_NUMBER (22)
+
 
 BLE_NUS_C_DEF(m_ble_nus_c);                                             /**< BLE Nordic UART Service (NUS) client instance. */
 NRF_BLE_GATT_DEF(m_gatt);                                               /**< GATT module instance. */
